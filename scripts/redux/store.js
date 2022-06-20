@@ -5,12 +5,20 @@ const applicationIntialState = {
   auth: {
     authMessage: {},
     authStatus: {},
+    openModal: false,
   },
 };
-function applicationReducer(state = { applicationIntialState }, action) {
+function applicationReducer(state = applicationIntialState, action) {
   switch (action.type) {
-    case hello:
-      return { auth: "he is logged in" };
+    case "updateAuthStatusAndMessage":
+      return {
+        ...state,
+        auth: {
+          authMessage: action.message,
+          authStatus: action.authStatus,
+          openModal: true,
+        },
+      };
     default:
       return state;
   }
