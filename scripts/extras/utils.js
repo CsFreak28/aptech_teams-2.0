@@ -1,3 +1,5 @@
+import { animatePopup } from "../animations";
+import { store } from "../redux/store";
 export default class AddToolTip {
   constructor(elements) {
     this.elements = [...elements];
@@ -20,59 +22,52 @@ export function addSvgLoader() {
   let button = document.querySelector(".submit");
   button.style.backgroundColor = "black";
   console.log(button);
-  let svg = `<?xml version="1.0" encoding="utf-8"?>
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"width="33px" height="33px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-  <g transform="translate(80,50)">
-  <g transform="rotate(0)">
-  <circle cx="0" cy="0" r="7" fill="#fcc02c" fill-opacity="1">
-    <animateTransform attributeName="transform" type="scale" begin="-0.2801120448179272s" values="1.5 1.5;1 1" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite"></animateTransform>
-    <animate attributeName="fill-opacity" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite" values="1;0" begin="-0.2801120448179272s"></animate>
-  </circle>
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="70px" height="70px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+  <defs>
+    <filter id="ldio-3i01508gpyj-filter" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
+      <feComponentTransfer result="cutoff">
+        <feFuncA type="table" tableValues="0 0 0 0 0 0 1 1 1 1 1"></feFuncA>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <g filter="url(#ldio-3i01508gpyj-filter)"><g transform="translate(50 50)">
+  <g>
+    <circle cx="15" cy="0" r="5" fill="#823200">
+      <animate attributeName="r" keyTimes="0;0.5;1" values="3;7;3" dur="2.2222222222222223s" repeatCount="indefinite" begin="-0.45s"></animate>
+    </circle>
+    <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="2.2222222222222223s" repeatCount="indefinite" begin="0s"></animateTransform>
   </g>
-  </g><g transform="translate(68.704694055762,73.4549444740409)">
-  <g transform="rotate(51.42857142857143)">
-  <circle cx="0" cy="0" r="7" fill="#fcc02c" fill-opacity="0.8571428571428571">
-    <animateTransform attributeName="transform" type="scale" begin="-0.23342670401493928s" values="1.5 1.5;1 1" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite"></animateTransform>
-    <animate attributeName="fill-opacity" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite" values="1;0" begin="-0.23342670401493928s"></animate>
-  </circle>
+  </g><g transform="translate(50 50)">
+  <g>
+    <circle cx="15" cy="0" r="5" fill="#edb870">
+      <animate attributeName="r" keyTimes="0;0.5;1" values="3;7;3" dur="1.1111111111111112s" repeatCount="indefinite" begin="-0.36s"></animate>
+    </circle>
+    <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="1.1111111111111112s" repeatCount="indefinite" begin="-0.09s"></animateTransform>
   </g>
-  </g><g transform="translate(43.32437198131057,79.2478373654547)">
-  <g transform="rotate(102.85714285714286)">
-  <circle cx="0" cy="0" r="7" fill="#fcc02c" fill-opacity="0.7142857142857143">
-    <animateTransform attributeName="transform" type="scale" begin="-0.18674136321195142s" values="1.5 1.5;1 1" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite"></animateTransform>
-    <animate attributeName="fill-opacity" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite" values="1;0" begin="-0.18674136321195142s"></animate>
-  </circle>
+  </g><g transform="translate(50 50)">
+  <g>
+    <circle cx="15" cy="0" r="5" fill="#fcc029">
+      <animate attributeName="r" keyTimes="0;0.5;1" values="3;7;3" dur="0.7407407407407407s" repeatCount="indefinite" begin="-0.27s"></animate>
+    </circle>
+    <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="0.7407407407407407s" repeatCount="indefinite" begin="-0.18s"></animateTransform>
   </g>
-  </g><g transform="translate(22.97093396292743,63.01651217352675)">
-  <g transform="rotate(154.2857142857143)">
-  <circle cx="0" cy="0" r="7" fill="#fcc02c" fill-opacity="0.5714285714285714">
-    <animateTransform attributeName="transform" type="scale" begin="-0.1400560224089636s" values="1.5 1.5;1 1" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite"></animateTransform>
-    <animate attributeName="fill-opacity" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite" values="1;0" begin="-0.1400560224089636s"></animate>
-  </circle>
+  </g><g transform="translate(50 50)">
+  <g>
+    <circle cx="15" cy="0" r="5" fill="#7cafc4">
+      <animate attributeName="r" keyTimes="0;0.5;1" values="3;7;3" dur="0.5555555555555556s" repeatCount="indefinite" begin="-0.18s"></animate>
+    </circle>
+    <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="0.5555555555555556s" repeatCount="indefinite" begin="-0.27s"></animateTransform>
   </g>
-  </g><g transform="translate(22.970933962927425,36.98348782647326)">
-  <g transform="rotate(205.71428571428572)">
-  <circle cx="0" cy="0" r="7" fill="#fcc02c" fill-opacity="0.42857142857142855">
-    <animateTransform attributeName="transform" type="scale" begin="-0.09337068160597571s" values="1.5 1.5;1 1" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite"></animateTransform>
-    <animate attributeName="fill-opacity" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite" values="1;0" begin="-0.09337068160597571s"></animate>
-  </circle>
+  </g><g transform="translate(50 50)">
+  <g>
+    <circle cx="15" cy="0" r="5" fill="#06080a">
+      <animate attributeName="r" keyTimes="0;0.5;1" values="3;7;3" dur="0.4444444444444444s" repeatCount="indefinite" begin="-0.09s"></animate>
+    </circle>
+    <animateTransform attributeName="transform" type="rotate" keyTimes="0;1" values="0;360" dur="0.4444444444444444s" repeatCount="indefinite" begin="-0.36s"></animateTransform>
   </g>
-  </g><g transform="translate(43.32437198131056,20.752162634545293)">
-  <g transform="rotate(257.1428571428571)">
-  <circle cx="0" cy="0" r="7" fill="#fcc02c" fill-opacity="0.2857142857142857">
-    <animateTransform attributeName="transform" type="scale" begin="-0.046685340802987856s" values="1.5 1.5;1 1" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite"></animateTransform>
-    <animate attributeName="fill-opacity" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite" values="1;0" begin="-0.046685340802987856s"></animate>
-  </circle>
-  </g>
-  </g><g transform="translate(68.704694055762,26.545055525959103)">
-  <g transform="rotate(308.5714285714286)">
-  <circle cx="0" cy="0" r="7" fill="#fcc02c" fill-opacity="0.14285714285714285">
-    <animateTransform attributeName="transform" type="scale" begin="0s" values="1.5 1.5;1 1" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite"></animateTransform>
-    <animate attributeName="fill-opacity" keyTimes="0;1" dur="0.32679738562091504s" repeatCount="indefinite" values="1;0" begin="0s"></animate>
-  </circle>
-  </g>
-  </g>
-  <!-- [ldio] generated by https://loading.io/ --></svg>`;
+  </g></g>
+  </svg>`;
 
   //remove the yellow hover style
   button.addEventListener("mouseover", () => {
@@ -83,34 +78,44 @@ export function addSvgLoader() {
 }
 export function removeSvgLoader() {
   let button = document.querySelector(".submit");
-  button.addEventListener('mouseover',()=>{
-    button.style.backgroundColor='#FCC029'
-  })
-  button.addEventListener('mouseout',()=>{
-    button.style.backgroundColor = 'black'
-  })
+  button.addEventListener("mouseover", () => {
+    button.style.backgroundColor = "#FCC029";
+  });
+  button.addEventListener("mouseout", () => {
+    button.style.backgroundColor = "black";
+  });
   button.disabled = false;
-  button.innerHTML =`${button.accessKey}`;
+  button.innerHTML = `${button.accessKey}`;
   // button.innerText = "SIGN UP";
 }
 
-
 export function showPassword() {
-  let passwordIcon = document.querySelector('.fa-eye-slash')
-  let passwordInput = document.querySelector('.password_icon')
+  let passwordIcon = document.querySelector(".fa-eye-slash");
+  let passwordInput = document.querySelector(".password_icon");
   console.log(passwordInput);
-  passwordIcon.addEventListener('click',()=>{
-    if(passwordInput.type == 'password'){
-      passwordIcon.classList.remove('fa-eye-slash')
-      passwordIcon.classList.add('fa-eye')
-      passwordInput.type = 'text'
-    }else{
-      passwordInput.type = 'password'
-      passwordIcon.classList.remove('fa-eye')
-      passwordIcon.classList.add('fa-eye-slash')
-
-
+  passwordIcon.addEventListener("click", () => {
+    if (passwordInput.type == "password") {
+      passwordIcon.classList.remove("fa-eye-slash");
+      passwordIcon.classList.add("fa-eye");
+      passwordInput.type = "text";
+    } else {
+      passwordInput.type = "password";
+      passwordIcon.classList.remove("fa-eye");
+      passwordIcon.classList.add("fa-eye-slash");
     }
-  })
+  });
+}
 
+//show the modal if the openModal is true
+store.subscribe(() => {
+  let authDetails = store.getState();
+  let openPopup = authDetails.auth.openModal;
+  console.log(openPopup);
+  openPopup && showPopup(authDetails.auth);
+});
+
+export function showPopup(popupDetails) {
+  const popup = document.querySelector(".popup");
+  popup.textContent = `${popupDetails.authMessage} `;
+  animatePopup(popup, popupDetails.authStatus);
 }
