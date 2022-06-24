@@ -7,6 +7,11 @@ const applicationIntialState = {
     authStatus: {},
     openModal: false,
   },
+  alertMessage: {
+    message: "",
+    alertStatus:false,
+    openModal: false,
+  },
 };
 function applicationReducer(state = applicationIntialState, action) {
   switch (action.type) {
@@ -16,6 +21,16 @@ function applicationReducer(state = applicationIntialState, action) {
         auth: {
           authMessage: action.message,
           authStatus: action.authStatus,
+          openModal: true,
+          typeOfAuth: action.typeOfAuth,
+        },
+      };
+    case "userAlreadySignedIn":
+      return {
+        ...applicationIntialState,
+        alertMessage: {
+          message: action.alertMessage,
+          alertStatus:false,
           openModal: true,
         },
       };

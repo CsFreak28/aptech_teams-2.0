@@ -1,20 +1,19 @@
 import { gsap } from "gsap";
+//animation for the popup modal
 export function animatePopup(popup, status) {
-  gsap.to(popup,0.7, {
-    opacity: "1",
-    scale: "1",
-    top: "3%",
+  gsap.to(popup, 0.7, {
+    opacity: "80%",
+    top: "-1px",
     ease: "ease.in",
-    backgroundColor: status ? "#32cd32" : "#f2150b",
+    backgroundColor: status ? "#14D814" : "#f2150b",
   });
 
-  setTimeout(() => {
+  setTmeout(() => {
     gsap.to(popup, 0.5, {
       opacity: "0",
-      scale: "0",
       top: "-150px",
       ease: "ease.out",
       backgroundColor: "yellow",
     });
-  }, 3000);
+  }, 5000);
 }

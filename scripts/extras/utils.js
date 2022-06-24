@@ -89,6 +89,7 @@ export function removeSvgLoader() {
   // button.innerText = "SIGN UP";
 }
 
+//show the users password as text when eye-icon is clicked
 export function showPassword() {
   let passwordIcon = document.querySelector(".fa-eye-slash");
   let passwordInput = document.querySelector(".password_icon");
@@ -108,14 +109,41 @@ export function showPassword() {
 
 //show the modal if the openModal is true
 store.subscribe(() => {
-  let authDetails = store.getState();
-  let openPopup = authDetails.auth.openModal;
-  console.log(openPopup);
-  openPopup && showPopup(authDetails.auth);
+  let storeDetails = store.getState();
+  let openPopup = storeDetails.auth.openModal;
+  let openPopupParams = {
+    message: storeDetails.auth.authMessage,
+    status: storeDetails.auth.authStatus,
+  };
+  //show the popup if the openPopup
+  //if the openModal property for the auth object is true
+  openPopup && showPopup(openPopupParams);
 });
-
+store.subscribe(() => {
+  let storeDetails = store.getState();
+  let openPopup = storeDetails.alertMessage.openModal;
+  console.log(openPopup);
+  //create an object containing the parameters for the popup
+  let openPopupParams = {
+    message: storeDetails.alertMessage.message,
+    status: storeDetails.alertMessage.status,
+  };
+  openPopup && showPopup(openPopupParams);
+});
 export function showPopup(popupDetails) {
   const popup = document.querySelector(".popup");
-  popup.textContent = `${popupDetails.authMessage} `;
-  animatePopup(popup, popupDetails.authStatus);
+  console.log(popup);
+  console.log(popupDetails.message);
+  // remove'firebase error' from the error message
+  let firebaseRegex = "Firebase: Error (auth/";
+  // let authRegex = /auth/gi;
+  let bracketsRegex = /[\])}[{(]/g;
+  //store the message gotten from the redux store
+  let message = popupDetails.message;
+  // remove the firebase error string from the message
+  let firebaseErrorRemoved = message.replace(firebaseRegex, "");
+  // remove brackets from the message
+  let bracketsRemoved = firebaseErrorRemoved.replace(bracketsRegex, "");
+  popup.textContent = `${bracketsRemoved} `;
+  animatePopup(popup, popupDetails.status);
 }

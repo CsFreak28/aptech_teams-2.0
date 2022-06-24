@@ -1,13 +1,17 @@
-import signUpAndCreateUser from "./signUp";
+import Authenticate from "./signUp";
 import { addSvgLoader } from "../extras/utils";
 
-export default function validateUser(e,typeOfAuthentication) {
+export default function validateUser(e, typeOfAuthentication) {
   console.log("validate user was clicked");
+  console.log('the validate button was clicked')
+  console.log(typeOfAuthentication);
   e.preventDefault();
   const extractedValues = extractInputValue();
   console.log(extractedValues);
   extractedValues && addSvgLoader();
-  extractedValues && signUpAndCreateUser(extractedValues,typeOfAuthentication);
+  setTimeout(() => {
+    extractedValues && Authenticate(extractedValues, typeOfAuthentication);
+  }, 2000);
 }
 
 function extractInputValue() {

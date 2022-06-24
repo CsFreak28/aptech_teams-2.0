@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nav style.css -->
+    <link rel="stylesheet" href="/styles/nav.css">
+    <!-- End of nav style-->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- end of font awesome -->
+    <title>Admin</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- nav -->
+    <nav class="nav">
+        <div class="arrow">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </div>
+        <div class="profileImage">
+            <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="" srcset="" width="94%" height="94%">
+        </div>
+        <span class="fullname">Nwafor Bernard</span>
+
+        <div class="dashboardText">
+            <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 79 79">
+                <image id="dashboard" width="79" height="79" opacity="0.61" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAEAYAAAD6+a2dAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAABgAAAAYADwa0LPAAAAB3RJTUUH5gYWEDcj2L3d6gAAA0ZJREFUeNrtnE1IVGEUhs833RY5Ev0sihApAgO9hLqJGNBxaFW00WGQooRa1Erzj8jCxUBCkMws2ii4NPIvIcpN6cyo0M6fmBEMiogWtohCHGlx87RwZsDR6ZtxiOt43md7z1zOO/e933xn7jmXCAAAAAASUbl+4I8ReWQ+9/noJi3SdHMzd3Gcu6qq6DR1q8tFRbYp+UJ+nlhfVz3KqXrm5zm48WrDEwwah+vUkm90dLen3e96szaAdS/EZmswSE9VhN62tNgmPFfuUBmfDASMAfep2Lu2NujditYAyTuAf/Ml6hkaslvfrvnBD9jh9Ron6t7HPoyNQe8mDu2JEkuf3XryRbWpFrqRxZ0sTK92BbCWI07zyNoaneU3VOJ0bgs4Ri4u83iMVffB2MtQyC7BVmnkZ/mwx0OfedHhn5zcFvBJXaFv8bhxrjYe/VVcDL2b6A1ghcOmyZzpuGG43dGoynkz+d++mDzzlaZX/xMA9jUwgHBgAOHAAMKBAYQDAwgHBhAODCAcGEA4MIBwYADhwADpJB6iZDqceghjM9o8NDqSGHYL2WuoJ+ShxoUF7ieiWZdrW0Di6ZtF4bBp2pkpL5L/Hzr8PMAP5+aIqJE6M8dhBUgj2Vpldx556+iiM+p1IKCLgwHSSPXUJVqr7M4nZ65xLU/09hoV7gvRyPi4LhwGyECqpy7RWqWaaIWbZmaSzZh255dqCr1Oz7hvepqW6RAdr683hutUrLSjI9vToCFEOFgBhAMDCEdvAGF1sTT0cwG3IlfNu7Oz3M/tO9bFBUJyE3dg0N0Y66ypyfZz4ieDrNUQlw97vVSkIg7/yIhtgvMluUvOsjySMhmk/QmQVhen7vhCu/BJ+uijWmlttb6HLlacb2jQhWe9CZRSF2MySDiYDBJOof2RhMkgkBcwgHBy7gfY73WxNPCGkHSd2ANsRVpdLA28IUQ42j0A36cpelFZSUTtVLJDQIHUxdytbqvH1dU0aFeGexP9CpDpD5EEdl/4VB5fa48u+aamdqtDKigDhQMDCAcGEA4MIBwYQDgwgHBgAOHAAMKBAYQDAwgHBhAOJoOE68VkkHC92hVA2hszpOnFZJBwvZgMgl4AAAAACOQvp/QkZDixunMAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjJUMTY6NTU6MzUrMDA6MDCar2AsAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIyVDE2OjU1OjM1KzAwOjAw6/LYkAAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMi0wNi0yMlQxNjo1NTozNSswMDowMLzn+U8AAAAASUVORK5CYII="/>
+              </svg>              
+            <p>Dashboard</p>
+        </div>
+        <div class="dashboardLinks">
+            <!-- admin roles -->
+            <div data-role="admin" class="adminViewUsers dashLink">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                Users
+            </div>
+            <div data-role="admin" class="adminViewProject dashLink">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                Project
+            </div>
+            <div data-role="admin" class="adminTeamLeader dashLink">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Team leaders
+            </div>
+            <div data-role="admin" class="adminViewTeams dashLink">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+                Teams
+            </div>
+            <!-- end of admin roles -->
+
+            <!-- team leader roles -->
+            <!-- <div data-role="teamLeader" class="createTeams dashLink">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+                Team
+            </div>
+            <div data-role="teamLeader" class="teamLeaderViewProject dashLink">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                Project
+            </div> -->
+            <!-- end of team roles -->
+
+            <!-- user roles -->
+            <!-- <div  data-role="users" class="userViewAllUsers dashLink">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Students
+            </div>
+            <div data-role="users" class="userViewTeam dashLink">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+                Team
+            </div>
+            <div data-role="users" class="userViewProject dashLink">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                Project
+            </div>
+            <div data-role="users" class="userTeamRequest dashLink">
+                <i class="fa fa-commenting" aria-hidden="true"></i>
+                Notifications
+            </div> -->
+            <!-- end of user role -->
+
+            
+
+
+        </div>
+    </nav>
+    <!-- end of nav -->
+
+
+    <div class="content">
+         <!-- header -->
+        <header class="header">
+            
+        </header>
+        <!-- end of header -->
+
+        <!-- content -->
+        <div class="info">
+            <div class="pageDescription">
+                Users
+            </div>
+            <div class="tableOfUsers">
+                <div class="tableHead">
+                    <div class="info">Name</div>
+                    <div class="info">Email</div>
+                    <div class="info">Edit</div>
+                </div>
+                <table >
+                    <tr>
+                        <td class="fullname"><span></span>Bernard Nwafor</td>
+                        <td>bernardnwafor90@gmail.com</td>
+                        <td><button accesskey="uid">Delete User</button></td>
+                    </tr>
+                    <tr>
+                        <td class="fullname"><span></span>Bernard Nwafor</td>
+                        <td>bernardnwafor90@gmail.com</td>
+                        <td><button accesskey="uid">Delete User</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- end of content -->
+    </div>
+   
+</body>
+</html>
